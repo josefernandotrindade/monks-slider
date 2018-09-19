@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - monks # This is the name of the module we're using for this example
+id: slider
+label: Slider
+description: ''
+

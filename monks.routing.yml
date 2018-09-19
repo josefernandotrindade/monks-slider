@@ -1,0 +1,13 @@
+monks.node.slider:
+  path: 'node/{node}/slider'
+  defaults:
+    _controller: 'Drupal\monks\Controller\SliderController::getSliders'
+    _title: 'Add container'
+    _entity_access: node.view
+  options:
+      parameters:
+        node:
+          type: entity:node
+  requirements:
+    _permission: 'access content'
+    

@@ -1,0 +1,9 @@
+name: Paragraphs Slider
+description: Creates a slider using the paragraphs module.
+package: Custom
+
+type: module
+core: 8.x
+
+dependencies:
+  - paragraphs:paragraphs
