@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - monks # This is the name of the module we're using for this example
+name: slider
+label: Slider
+effects:
+  5e5f15b6-38ab-4fc6-87d8-6a5336078658:
+    uuid: 5e5f15b6-38ab-4fc6-87d8-6a5336078658
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1600
+      height: 500
+      anchor: center-center
