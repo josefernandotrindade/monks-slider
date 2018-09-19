@@ -12,12 +12,18 @@ use Drupal\node\Entity\Node;
 class SliderController extends ControllerBase {
 
   public function getSliders(Node $node) {
-    $sliders = [];
+    $sliders = [
+      'data' => [],
+    ];
 
-    if ($node->hasField('field_sliders')) {
-      foreach ($node->field_sliders as $slider) {
-        $paragraphs = [];
+    if ($node->hasField('field_slider')) {
+      foreach ($node->field_slider as $slide) {
         
+        $sliders['data'][] = [
+          'title' => $slide->entity->field_title->first()->value,
+          'image' => NUL,
+          'body' => NULL,  
+        ];
       }
     }
 
