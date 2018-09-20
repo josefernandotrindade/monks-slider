@@ -10,8 +10,9 @@ dependencies:
   module:
     - image
     - text
-  enforced:
-    - monks # This is the name of the module we're using for this example       
+  enforced:  
+    module:
+      - monks # This is the name of the module we're using for this example       
 id: paragraph.slide.default
 targetEntityType: paragraph
 bundle: slide

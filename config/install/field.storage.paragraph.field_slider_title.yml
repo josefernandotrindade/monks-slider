@@ -5,7 +5,8 @@ dependencies:
     - paragraphs
     - text
   enforced:
-    - monks # This is the name of the module we're using for this example       
+    module:
+      - monks # This is the name of the module we're using for this example       
 id: paragraph.field_slider_title
 field_name: field_slider_title
 entity_type: paragraph
