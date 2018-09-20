@@ -1,0 +1,21 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+
+
+function monks_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+    // TODO: filter by display mode?
+
+    if ($entity->hasField('field_slider') and !$entity->field_slider->isEmpty()) {
+        $build['slider'] = [
+            '#prefix' => '<div class="home-slider" data-slider-nid="' . $entity->id() . '">',
+            '#suffix' => '</div>',
+            '#markup' => '',
+        ];
+
+        $build['#attached']['library'][] = 'monks/slider';
+        $build['#attached']['drupalSettings']['monks']['nid'] = $entity->id();
+    }
+}

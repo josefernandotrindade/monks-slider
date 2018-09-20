@@ -1,0 +1,19 @@
+slick-slider:
+  js:
+    slick/slick.min.js: {}
+  css:
+    theme:
+      slick/slick.css: {}
+      slick/slick-theme.css: {}
+  dependencies:
+    - core.jquery
+
+slider:
+  js:
+    js/slider.js: {}
+  css:
+    theme:
+      css/slider.css: {}
+  dependencies:
+    - core/drupalSettings
+    - monks/slick-slider
