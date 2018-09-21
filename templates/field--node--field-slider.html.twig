@@ -38,16 +38,6 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'slider-item'
-  ]
-%}
-{% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-    TESTE
-      {{ content }}
-    {% endblock %}
-  </div>
-{% endblock paragraph %}
+<div{{ attributes }}>
+TESTE
+</div>

@@ -4,26 +4,19 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
 function monks_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
-    // TODO: filter by display mode?
-
-    if ($entity->hasField('field_slider') and !$entity->field_slider->isEmpty()) {
-        // Hide the field itself, no nee to show the same content twice
-        $build['field_slider']['#access'] = FALSE; 
-
-        // Add the slider markup
-        $build['slider'] = [
+    // Check if the slider is visible for this particular display mode
+    if ($display->getComponent('field_slider')) {
+        // Modify the slider markup
+        $build['field_slider'] = [
             '#type' => 'html_tag',
             '#tag' => 'div',
-            '#value' => '',
+            '#weight' => $build['field_slider']['#weight'],
             '#attributes' => [
                 'class' => ['home-slider'],
                 'data-slider-nid' => $entity->id(),
             ],
-            '#attached' => [
-                'library' => [
-                    'monks/slider',
-                ],
-            ],
-          ];
+        ];
+
+        $build['#attached']['library'][] = 'monks/slider';
     }
 }
