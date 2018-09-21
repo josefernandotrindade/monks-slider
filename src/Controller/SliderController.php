@@ -22,11 +22,14 @@ class SliderController extends ControllerBase {
     if ($node->hasField('field_slider') and !$node->field_slider->isEmpty()) {
       foreach ($node->field_slider as $slide) {
         $entity = $slide->entity;
+
+        $title = $entity->field_slider_title->first()->getValue();
+        $body = $entity->field_slider_body->first()->getValue();
         $image = $entity->field_slider_image->first()->entity;
 
         $sliders['data'][] = [
-          'title' => Xss::filter($entity->field_slider_title->first()->value),
-          'body' =>  $entity->field_slider_body->isEmpty() ? '' : Xss::filter($entity->field_slider_body->first()->value),
+          'title' => check_markup($title['value'], $title['format']),
+          'body' =>  check_markup($body['value'], $body['format']),
           'image' => $slider_style->buildUrl($image->getFileUri()),  
         ];
       }
