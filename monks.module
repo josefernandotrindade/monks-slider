@@ -11,7 +11,7 @@ function monks_node_view(array &$build, EntityInterface $entity, EntityViewDispl
     $build['field_slider'] = [
       '#type' => 'html_tag',
       '#tag' => 'div',
-      '#weight' => $build['field_slider']['#weight'],
+      '#weight' => $build['field_slider']['#weight'], // Keep the weight atributed at the backend!
       '#attributes' => [
         'class' => ['home-slider'],
         'data-slider-nid' => $entity->id(),

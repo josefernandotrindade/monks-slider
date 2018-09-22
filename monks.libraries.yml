@@ -1,19 +1,18 @@
 slick-slider:
   js:
-    slick/slick.min.js: {}
+    slider/slick.min.js: {}
   css:
     component:
-      slick/slick.css: {preprocess: false}
-      slick/slick-theme.css: {}
+      slider/slick.css: {preprocess: false}
+      slider/slick-theme.css: {}
   dependencies:
     - core.jquery
 
 slider:
   js:
-    js/slider.js: {}
+    js/monks-slider.js: {}
   css:
     theme:
-      css/slider.css: {}
+      css/monks-slider.css: {}
   dependencies:
-    - core/drupalSettings
     - monks/slick-slider

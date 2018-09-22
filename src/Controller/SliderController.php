@@ -12,6 +12,12 @@ use Drupal\Component\Utility\Xss;
  */
 class SliderController extends ControllerBase {
 
+  /**
+   * Gets the slider data associated to a particular node
+   *
+   * @param Node $node
+   * @return JsonResponse
+   */
   public function getSliders(Node $node) {
     $sliders = [
       'data' => [],
@@ -30,7 +36,7 @@ class SliderController extends ControllerBase {
         $sliders['data'][] = [
           'title' => check_markup($title['value'], $title['format']),
           'body' =>  check_markup($body['value'], $body['format']),
-          'image' => $slider_style->buildUrl($image->getFileUri()),  
+          'image' => $slider_style->buildUrl($image->getFileUri()),
         ];
       }
     }

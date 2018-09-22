@@ -32,7 +32,7 @@
 
                         slide.find('.slider-item-title').html(item.title);
                         slide.find('.slider-item-par').html(item.body);
-                        slide.find('.slider-item-image img').attr('src', item.image);
+                        slide.find('.slider-item-image img').attr('src', item.image).attr('alt', item.title);
 
                         container.slick('slickAdd', slide.prop('outerHTML'));
                     });
