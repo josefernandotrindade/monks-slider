@@ -3,20 +3,21 @@
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 
-function monks_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
-    // Check if the slider is visible for this particular display mode
-    if ($display->getComponent('field_slider')) {
-        // Modify the slider markup
-        $build['field_slider'] = [
-            '#type' => 'html_tag',
-            '#tag' => 'div',
-            '#weight' => $build['field_slider']['#weight'],
-            '#attributes' => [
-                'class' => ['home-slider'],
-                'data-slider-nid' => $entity->id(),
-            ],
-        ];
+function monks_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode)
+{
+  // Check if the slider is visible for this particular display mode
+  if ($display->getComponent('field_slider')) {
+    // Modify the slider markup
+    $build['field_slider'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'div',
+      '#weight' => $build['field_slider']['#weight'],
+      '#attributes' => [
+        'class' => ['home-slider'],
+        'data-slider-nid' => $entity->id(),
+      ],
+    ];
 
-        $build['#attached']['library'][] = 'monks/slider';
-    }
+    $build['#attached']['library'][] = 'monks/slider';
+  }
 }

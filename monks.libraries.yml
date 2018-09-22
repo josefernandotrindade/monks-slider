@@ -2,8 +2,8 @@ slick-slider:
   js:
     slick/slick.min.js: {}
   css:
-    theme:
-      slick/slick.css: {}
+    component:
+      slick/slick.css: {preprocess: false}
       slick/slick-theme.css: {}
   dependencies:
     - core.jquery
