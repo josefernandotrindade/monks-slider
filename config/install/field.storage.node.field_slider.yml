@@ -10,7 +10,6 @@ dependencies:
     - node
     - paragraphs
 _core:
-  default_config_hash: QSNhBeSxXIFKGe3al1ae7V74vdM9i8aSJGRVisrYEsU
 id: node.field_slider
 field_name: field_slider
 entity_type: node

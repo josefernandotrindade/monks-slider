@@ -34,8 +34,8 @@ class SliderController extends ControllerBase {
         $image = $entity->field_slider_image->first()->entity;
 
         $sliders['data'][] = [
-          'title' => check_markup($title['value'], $title['format']),
-          'body' =>  check_markup($body['value'], $body['format']),
+          'title' => check_markup($title['value'], 'slider_html'),
+          'body' =>  check_markup($body['value'], 'slider_html'),
           'image' => $slider_style->buildUrl($image->getFileUri()),
         ];
       }
